@@ -18,6 +18,12 @@ function App() {
                 >
                     MUI Drawer without Header
                 </Link>
+                <Link
+                    className="App-link"
+                    to="/miniheader"
+                >
+                    MUI Drawer with SB Header
+                </Link>
             </header>
         </div>
     );
