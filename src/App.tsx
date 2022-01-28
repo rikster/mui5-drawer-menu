@@ -6,12 +6,12 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Link
-                    className="App-link"
-                    to="/simpleoverlay"
-                >
-                    MUI5 Menu Drawer | React Router V6 | Simple Overlay
-                </Link>
+                {/*<Link*/}
+                {/*    className="App-link"*/}
+                {/*    to="/simpleoverlay"*/}
+                {/*>*/}
+                {/*    MUI5 Menu Drawer | React Router V6 | Simple Overlay*/}
+                {/*</Link>*/}
                 <Link
                     className="App-link"
                     to="/miniheader"
