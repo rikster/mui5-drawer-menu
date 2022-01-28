@@ -11,10 +11,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import Toolbar from "@mui/material/Toolbar";
-import MuiAppBar from '@mui/material/AppBar';
+import AppBar from "@mui/material/AppBar";
+import logo from "./logo_sam.png"
+
+import {Home, Info, LocalAtm, MonetizationOn, SettingsApplicationsRounded as Settings} from "@mui/icons-material"
+import {CustomerSearchIcon} from './CustomerSearchIcon'
+import {TokenClaimsIcon} from './TokenClaimsIcon'
+import {BonusBetsIcon} from './BonusBetsIcon'
+import {BetWitMatesIcon} from './BetWithMatesIcon'
+import {AdminIcon} from './AdminIcon'
+
 
 const drawerWidth = 240;
 
@@ -35,9 +42,9 @@ const closedMixin = (theme: Theme): CSSObject => ({
         duration: theme.transitions.duration.leavingScreen,
     }),
     overflowX: 'hidden',
-    width: `calc(${theme.spacing(7)} + 1px)`,
+    width: `calc(${theme.spacing(4.8)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
-        width: `calc(${theme.spacing(9)} + 1px)`,
+        width: `calc(${theme.spacing(4.8)} + 1px)`,
     },
 });
 
@@ -58,13 +65,16 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
     }),
 );
 
-// const AppBar = styled(MuiAppBar, {shouldForwardProp: (prop) => prop !== 'open'})(
-//     ({theme, open}) => ({
-//
-//     }),);
-
+const MuiAppBar = styled(AppBar)(
+    ({theme}) => ({
+        position: "fixed",
+        paddingLeft: theme.spacing(1.0),
+        zIndex: theme.zIndex.drawer + 1,
+    }),
+);
 
 export default function MiniDrawerHeader() {
+    const logoSam = logo;
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -77,60 +87,108 @@ export default function MiniDrawerHeader() {
             <Box sx={{display: 'flex'}}>
                 <CssBaseline/>
                 {/* Top bar */}
-                <MuiAppBar
-                    sx={theme => ({
-                        // Fixed position, sits on top of the sidebar
-                        position: "fixed"
-                        //zIndex: theme.zIndex.drawer + 1
-                    })}
-                    data-automation-id="app-bar"
-                    elevation={0}
-                >
+                <MuiAppBar data-automation-id="app-bar" elevation={0}>
                     <Toolbar variant="dense" disableGutters={true}>
                         <Box
                             component="img"
-                            src={process.env.PUBLIC_URL + "/images/logo_sam.png"}
+                            src={logoSam}
                             alt="logo"
                             width="32px"
                             height="32px"
                             mr={1}
                         />
+                        {/*<Typography flexGrow={1} variant="h5" color="inherit">*/}
+                        {/*    <Link*/}
+                        {/*        data-automation-id="app-title"*/}
+                        {/*        to="/"*/}
+                        {/*        sx={{ color: "inherit", textDecoration: "inherit" }}>*/}
+                        {/*        SAM*/}
+                        {/*    </Link>*/}
+                        {/*</Typography>*/}
                     </Toolbar>
                 </MuiAppBar>
-                <Drawer variant="permanent" open={open} sx={{}} >
-                    <List>
-                        <ListItem>
-                            <ListItemIcon>
+                <Drawer variant="permanent" open={open}>
+                    <List sx={{paddingTop: 0, paddingBottom: 0}}>
+                        <ListItem sx={{paddingLeft: theme.spacing(1)}}>
+                            <ListItemIcon sx={{minWidth: 30}}>
                                 <IconButton
-                                    color="inherit"
+                                    color="primary"
                                     aria-label="open drawer"
                                     onClick={toggleDrawerOpen}
                                     edge="start"
+                                    sx={{paddingLeft: 1.5}}
                                 >
                                     <MenuIcon/>
                                 </IconButton>
                             </ListItemIcon>
                         </ListItem>
                     </List>
-                    <Divider/>
-                    <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                    <List sx={{paddingTop: 0}}>
+                        {['Home', 'Customer Finder'].map((text, index) => (
+                            <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Home" ? <Home color="primary"/> : undefined}
+                                    {text === "Customer Finder" ? <CustomerSearchIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text}/>
+                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
                             </ListItem>
                         ))}
                     </List>
                     <Divider/>
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                        {['Token Management', 'Token Claims', 'Bonus Bet Management'].map((text, index) => (
+                            <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Token Management" ? <MonetizationOn color="primary"/> : undefined}
+                                    {text === "Token Claims" ? <TokenClaimsIcon color="primary"/> : undefined}
+                                    {text === "Bonus Bet Management" ? <BonusBetsIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text}/>
+                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider/>
+                    <List>
+                        {['Token Payouts', 'Manual Resulting Config'].map((text, index) => (
+                            <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Token Payouts" ? <LocalAtm color="primary"/> : undefined}
+                                    {text === "Manual Resulting Config" ? <Settings color="primary"/> : undefined}
+                                </ListItemIcon>
+                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider/>
+                    <List>
+                        {['Bet With Mates'].map((text, index) => (
+                            <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Bet With Mates" ? <BetWitMatesIcon color="primary"/> : undefined}
+                                </ListItemIcon>
+                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider/>
+                    <List>
+                        {['Safer Gambling'].map((text, index) => (
+                            <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Safer Gambling" ? <Info color="primary"/> : undefined}
+                                </ListItemIcon>
+                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider sx={{position: "absolute", bottom: theme.spacing(13), width: "100%"}}/>
+                    <List sx={{position: "absolute", bottom: theme.spacing(5)}}>
+                        {['Admin'].map((text, index) => (
+                            <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Admin" ? <AdminIcon color="primary"/> : undefined}
+                                </ListItemIcon>
+                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
                             </ListItem>
                         ))}
                     </List>
