@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import {CSSObject, styled, Theme, useTheme} from '@mui/material/styles';
+import {CSSObject, styled, Theme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -56,7 +56,7 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
 );
 
 export default function MiniDrawerNoHeader() {
-    const theme = useTheme();
+    //const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawerOpen = () => {
