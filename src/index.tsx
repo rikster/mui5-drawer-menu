@@ -6,6 +6,8 @@ import OriginalDrawerHeader from './OriginalDrawerHeader';
 import MiniDrawerNoHeader from "./MiniDrawerNoHeader";
 import MiniDrawerHeader from "./MiniDrawerHeader";
 import App from "./App";
+import MiniDrawerHeaderOverlay from './MiniDrawerHeaderOverlay';
+import SimpleOverlay from './SimpleOverlay';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -15,6 +17,8 @@ ReactDOM.render(
                 <Route path="/header" element={<OriginalDrawerHeader />}/>
                 <Route path="/noheader" element={<MiniDrawerNoHeader/>}/>
                 <Route path="/miniheader" element={<MiniDrawerHeader/>}/>
+                <Route path="/miniheaderoverlay" element={<MiniDrawerHeaderOverlay/>}/>
+                <Route path="/simpleoverlay" element={<SimpleOverlay/>}/>
             </Routes>
         </Router>
     </React.StrictMode>,

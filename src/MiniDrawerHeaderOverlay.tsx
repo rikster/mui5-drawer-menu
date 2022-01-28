@@ -85,6 +85,7 @@ export default function MiniDrawerHeader() {
     return (
         <>
             <Box sx={{display: 'flex'}}>
+                <CssBaseline/>
                 {/* Top bar */}
                 <MuiAppBar data-automation-id="app-bar" elevation={0}>
                     <Toolbar variant="dense" disableGutters={true}>

@@ -8,21 +8,21 @@ function App() {
             <header className="App-header">
                 <Link
                     className="App-link"
-                    to="/header"
+                    to="/simpleoverlay"
                 >
-                    MUI Drawer with Header
-                </Link>
-                <Link
-                    className="App-link"
-                    to="/noheader"
-                >
-                    MUI Drawer without Header
+                    Simple MUI5 Menu Drawer | React Router V6 | Overlay
                 </Link>
                 <Link
                     className="App-link"
                     to="/miniheader"
                 >
-                    MUI Drawer with SB Header
+                    MUI5 Menu Drawer | React Router V6
+                </Link>
+                <Link
+                    className="App-link"
+                    to="/miniheaderoverlay"
+                >
+                    MUI5 Menu Drawer | React Router V6 | Overlay
                 </Link>
             </header>
         </div>
