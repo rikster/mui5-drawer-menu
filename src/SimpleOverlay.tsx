@@ -16,8 +16,6 @@ import {BonusBetsIcon} from "./BonusBetsIcon";
 import {BetWitMatesIcon} from "./BetWithMatesIcon";
 import {useTheme} from "@mui/material/styles";
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
 export default function TemporaryDrawer() {
     const [open, setOpen] = React.useState(false);
 
@@ -29,7 +27,7 @@ export default function TemporaryDrawer() {
 
     const list = () => (
             <Box
-                sx={{width: 250}}
+                sx={{width: 240}}
                 role="presentation"
                 onClick={toggleDrawer}
                 onKeyDown={toggleDrawer}
