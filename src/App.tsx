@@ -8,23 +8,16 @@ function App() {
             <header className="App-header">
                 <Link
                     className="App-link"
-                    to="/miniheader"
+                    to="/simpleoverlay"
                 >
-                    MUI5 Menu Drawer | React Router V6
+                    MUI5 Menu Drawer | React Router V6 | Simple Overlay
                 </Link>
                 <Link
                     className="App-link"
-                    to="/simpleoverlay"
+                    to="/miniheader"
                 >
                     MUI5 Menu Drawer | React Router V6 | Overlay
                 </Link>
-
-                {/*<Link*/}
-                {/*    className="App-link"*/}
-                {/*    to="/miniheaderoverlay"*/}
-                {/*>*/}
-                {/*    MUI5 Menu Drawer | React Router V6 | Overlay*/}
-                {/*</Link>*/}
             </header>
         </div>
     );
