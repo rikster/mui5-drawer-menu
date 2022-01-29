@@ -73,12 +73,12 @@ const MuiAppBar = styled(AppBar)(
     }),
 );
 
-export default function MiniDrawerHeader() {
+export default function MiniDrawerHeaderOverlay() {
     const logoSam = logo;
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    const toggleDrawerOpen = () => {
+    const toggleDrawer = () => {
         setOpen(!open);
     };
 
@@ -96,7 +96,7 @@ export default function MiniDrawerHeader() {
                             width="32px"
                             height="32px"
                             mr={1}
-                        />ground
+                        />
                         {/*<Typography flexGrow={1} variant="h5" color="inherit">*/}
                         {/*    <Link*/}
                         {/*        data-automation-id="app-title"*/}
@@ -114,7 +114,7 @@ export default function MiniDrawerHeader() {
                                 <IconButton
                                     color="primary"
                                     aria-label="open drawer"
-                                    onClick={toggleDrawerOpen}
+                                    onClick={toggleDrawer}
                                     edge="start"
                                     sx={{paddingLeft: 1.5}}
                                 >
@@ -130,7 +130,7 @@ export default function MiniDrawerHeader() {
                                     {text === "Home" ? <Home color="primary"/> : undefined}
                                     {text === "Customer Finder" ? <CustomerSearchIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
                         ))}
                     </List>
@@ -143,7 +143,7 @@ export default function MiniDrawerHeader() {
                                     {text === "Token Claims" ? <TokenClaimsIcon color="primary"/> : undefined}
                                     {text === "Bonus Bet Management" ? <BonusBetsIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
                         ))}
                     </List>
@@ -155,7 +155,7 @@ export default function MiniDrawerHeader() {
                                     {text === "Token Payouts" ? <LocalAtm color="primary"/> : undefined}
                                     {text === "Manual Resulting Config" ? <Settings color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
                         ))}
                     </List>
@@ -166,7 +166,7 @@ export default function MiniDrawerHeader() {
                                 <ListItemIcon sx={{minWidth: 30}}>
                                     {text === "Bet With Mates" ? <BetWitMatesIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
                         ))}
                     </List>
@@ -177,7 +177,7 @@ export default function MiniDrawerHeader() {
                                 <ListItemIcon sx={{minWidth: 30}}>
                                     {text === "Safer Gambling" ? <Info color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
                         ))}
                     </List>
@@ -188,12 +188,12 @@ export default function MiniDrawerHeader() {
                                 <ListItemIcon sx={{minWidth: 30}}>
                                     {text === "Admin" ? <AdminIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}} />
+                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
                         ))}
                     </List>
                 </Drawer>
-                <Box component="main" sx={{flexGrow: 1, p: 3}}>
+                <Box component="main" sx={{flexGrow: 1, p: 3, position: "absolute", marginTop:theme.spacing(4), marginLeft: theme.spacing(4) }}>
                     <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

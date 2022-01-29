@@ -3,7 +3,7 @@ import {CSSObject, styled, Theme, useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-// import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -85,7 +85,7 @@ export default function MiniDrawerHeader() {
     return (
         <>
             <Box sx={{display: 'flex'}}>
-                {/*<CssBaseline/>*/}
+                <CssBaseline/>
                 {/* Top bar */}
                 <MuiAppBar data-automation-id="app-bar" elevation={0}>
                     <Toolbar variant="dense" disableGutters={true}>
@@ -193,7 +193,7 @@ export default function MiniDrawerHeader() {
                         ))}
                     </List>
                 </Drawer>
-                <Box component="main" sx={{flexGrow: 1, p: 3, position: "absolute", marginTop:theme.spacing(4), marginLeft: theme.spacing(4) }}>
+                <Box component="main" sx={{flexGrow: 1, p: 3}}>
                     <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
