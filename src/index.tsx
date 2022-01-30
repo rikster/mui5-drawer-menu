@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import App from "./App";
+import './index.css';
 import OriginalDrawerHeader from './OriginalDrawerHeader';
 import MiniDrawerNoHeader from "./MiniDrawerNoHeader";
 import MiniDrawerHeader from "./MiniDrawerHeader";
-import App from "./App";
 import MiniDrawerHeaderOverlay from './MiniDrawerHeaderOverlay';
 import SimpleOverlay from './SimpleOverlay';
+import Home from "./pages/Home";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.render(
                 <Route path="/miniheader" element={<MiniDrawerHeader/>}/>
                 <Route path="/miniheaderoverlay" element={<MiniDrawerHeaderOverlay/>}/>
                 <Route path="/simpleoverlay" element={<SimpleOverlay/>}/>
+                <Route path="/home" element={<Home/>}/>
             </Routes>
         </Router>
     </React.StrictMode>,

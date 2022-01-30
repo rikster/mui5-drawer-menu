@@ -21,6 +21,7 @@ import {TokenClaimsIcon} from './TokenClaimsIcon'
 import {BonusBetsIcon} from './BonusBetsIcon'
 import {BetWitMatesIcon} from './BetWithMatesIcon'
 import {AdminIcon} from './AdminIcon'
+import {Link} from "react-router-dom";
 
 
 const drawerWidth = 240;
@@ -89,22 +90,18 @@ export default function MiniDrawerHeader() {
                 {/* Top bar */}
                 <MuiAppBar data-automation-id="app-bar" elevation={0}>
                     <Toolbar variant="dense" disableGutters={true}>
-                        <Box
-                            component="img"
-                            src={logoSam}
-                            alt="logo"
-                            width="32px"
-                            height="32px"
-                            mr={1}
-                        />
-                        {/*<Typography flexGrow={1} variant="h5" color="inherit">*/}
-                        {/*    <Link*/}
-                        {/*        data-automation-id="app-title"*/}
-                        {/*        to="/"*/}
-                        {/*        sx={{ color: "inherit", textDecoration: "inherit" }}>*/}
-                        {/*        SAM*/}
-                        {/*    </Link>*/}
-                        {/*</Typography>*/}
+                        <Link
+                            data-automation-id="app-logo"
+                            to="/">
+                            <Box
+                                component="img"
+                                src={logoSam}
+                                alt="logo"
+                                width="32px"
+                                height="32px"
+                                mr={1}
+                            />
+                        </Link>
                     </Toolbar>
                 </MuiAppBar>
                 <Drawer variant="permanent" open={open}>
@@ -186,9 +183,9 @@ export default function MiniDrawerHeader() {
                         {['Admin'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1)}}>
                                 <ListItemIcon sx={{minWidth: 30}}>
-                                    {text === "Admin" ? <AdminIcon color="primary"/> : undefined}
+                                    {text === "Admin" ? <AdminIcon sx={{color: "gray"}}/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
+                                <ListItemText primary={text} sx={{color: "gray"}}/>
                             </ListItem>
                         ))}
                     </List>
