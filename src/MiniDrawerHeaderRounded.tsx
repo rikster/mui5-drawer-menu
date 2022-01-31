@@ -25,6 +25,9 @@ import {AdminIcon} from './AdminIcon'
 import {Link} from "react-router-dom";
 
 const drawerWidth = 240;
+//const iconSize = 16;
+const fontSize = "medium";
+
 
 const openedMixin = (theme: Theme): CSSObject => ({
     marginTop: theme.spacing(6),
@@ -113,7 +116,7 @@ export default function MiniDrawerHeaderRounded() {
                                     onClick={toggleDrawer}
                                     edge="start"
                                 >
-                                    <MenuIcon color="primary" sx={{ fontSize: "large"}}/>
+                                    <MenuIcon color="primary" sx={{ fontSize: fontSize}}/>
                                 </IconButton>
                             </ListItemIcon>
                         </ListItem>
@@ -121,9 +124,9 @@ export default function MiniDrawerHeaderRounded() {
                     <List sx={{paddingTop: 0}}>
                         {['Home', 'Customer Finder'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1.5)}}>
-                                <ListItemIcon>
-                                    {text === "Home" ? <Home color="primary" sx={{ fontSize: "large"}}/> : undefined}
-                                    {text === "Customer Finder" ? <CustomerSearchIcon color="primary" sx={{ fontSize: "medium"}}/> : undefined}
+                                <ListItemIcon sx={{minWidth: 30}}>
+                                    {text === "Home" ? <Home color="primary" sx={{ fontSize: fontSize}}/> : undefined}
+                                    {text === "Customer Finder" ? <CustomerSearchIcon color="primary" sx={{ fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
@@ -133,10 +136,10 @@ export default function MiniDrawerHeaderRounded() {
                     <List>
                         {['Token Management', 'Token Claims', 'Bonus Bet Management'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1.5)}}>
-                                <ListItemIcon>
-                                    {text === "Token Management" ? <MonetizationOn color="primary" sx={{ fontSize: "medium"}}/> : undefined}
-                                    {text === "Token Claims" ? <TokenClaimsIcon color="primary" sx={{ fontSize: "medium"}}/> : undefined}
-                                    {text === "Bonus Bet Management" ? <BonusBetsIcon color="primary" sx={{ fontSize: "medium"}}/> : undefined}
+                                <ListItemIcon sx={{minWidth: 26}}>
+                                    {text === "Token Management" ? <MonetizationOn color="primary" sx={{ fontSize: fontSize}}/> : undefined}
+                                    {text === "Token Claims" ? <TokenClaimsIcon color="primary" sx={{ fontSize: fontSize}}/> : undefined}
+                                    {text === "Bonus Bet Management" ? <BonusBetsIcon color="primary" sx={{ fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
@@ -146,9 +149,9 @@ export default function MiniDrawerHeaderRounded() {
                     <List>
                         {['Token Payouts', 'Manual Resulting Config'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1.5)}}>
-                                <ListItemIcon>
-                                    {text === "Token Payouts" ? <LocalAtm color="primary" sx={{ fontSize: "medium"}}/> : undefined}
-                                    {text === "Manual Resulting Config" ? <Settings color="primary" sx={{ fontSize: "medium"}}/> : undefined}
+                                <ListItemIcon sx={{minWidth: 26}}>
+                                    {text === "Token Payouts" ? <LocalAtm color="primary" sx={{ fontSize: fontSize}}/> : undefined}
+                                    {text === "Manual Resulting Config" ? <Settings color="primary" sx={{ fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
@@ -158,8 +161,8 @@ export default function MiniDrawerHeaderRounded() {
                     <List>
                         {['Bet With Mates'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1.5)}}>
-                                <ListItemIcon>
-                                    {text === "Bet With Mates" ? <BetWitMatesIcon color="primary" sx={{ fontSize: "medium"}}/> : undefined}
+                                <ListItemIcon sx={{minWidth: 26}}>
+                                    {text === "Bet With Mates" ? <BetWitMatesIcon color="primary" sx={{ fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
@@ -169,8 +172,8 @@ export default function MiniDrawerHeaderRounded() {
                     <List>
                         {['Safer Gambling'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1.5)}}>
-                                <ListItemIcon>
-                                    {text === "Safer Gambling" ? <Info color="primary" sx={{ fontSize: "medium"}}/> : undefined}
+                                <ListItemIcon sx={{minWidth: 26}}>
+                                    {text === "Safer Gambling" ? <Info color="primary" sx={{ fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{color: "#0077CC"}}/>
                             </ListItem>
@@ -180,8 +183,8 @@ export default function MiniDrawerHeaderRounded() {
                     <List sx={{position: "absolute", bottom: theme.spacing(5)}}>
                         {['Admin'].map((text, index) => (
                             <ListItem button key={text} sx={{paddingLeft: theme.spacing(1.5)}}>
-                                <ListItemIcon>
-                                    {text === "Admin" ? <AdminIcon sx={{color: "gray", fontSize: "medium"}}/> : undefined}
+                                <ListItemIcon sx={{minWidth: 26}}>
+                                    {text === "Admin" ? <AdminIcon sx={{color: "gray", fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{color: "gray"}}/>
                             </ListItem>

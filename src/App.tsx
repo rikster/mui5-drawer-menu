@@ -22,7 +22,7 @@ function App() {
                     className="App-link"
                     to="/miniheaderoverlayrounded"
                 >
-                    MUI5 Menu Drawer | React Router V6 | Content Static | Rounded Smaller Icons
+                    MUI5 Menu Drawer | React Router V6 | Content Static | Rounded Smaller Icons (16x16)
                 </Link>
             </header>
         </div>
