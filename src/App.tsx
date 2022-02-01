@@ -2,28 +2,26 @@ import React from 'react';
 import {Link} from "react-router-dom"
 import './App.css';
 
+export const NavLink = (props: { label: string; to: string }) => {
+    return (
+        <Link
+            className="App-link"
+            to={props.to}
+        >
+            {props.label.toLocaleLowerCase()}
+        </Link>
+    )
+}
+
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Link
-                    className="App-link"
-                    to="/miniheader"
-                >
-                    MUI5 Menu Drawer | React Router V6 | Content Moves
-                </Link>
-                <Link
-                    className="App-link"
-                    to="/miniheaderoverlay"
-                >
-                    MUI5 Menu Drawer | React Router V6 | Content Static
-                </Link>
-                <Link
-                    className="App-link"
-                    to="/miniheaderoverlayrounded"
-                >
-                    MUI5 Menu Drawer | React Router V6 | Content Static | Rounded Smaller Icons (20x20 - Viewport)
-                </Link>
+                <NavLink label={"MUI5 Menu Drawer | React Router V6 | Content Moves"} to={"/miniheader"}/>
+                <NavLink label={"MUI5 Menu Drawer | React Router V6 | Content Static"} to={"/miniheaderoverlay"}/>
+                <NavLink
+                    label={"MUI5 Menu Drawer | React Router V6 | Content Static | Rounded Smaller Icons (20x20 - Viewport) "}
+                    to={"/miniheaderoverlayrounded"}/>
             </header>
         </div>
     );
