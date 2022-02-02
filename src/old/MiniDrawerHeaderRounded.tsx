@@ -30,7 +30,6 @@ import {CustomerSearchIcon} from "../images/CustomerSearchIcon";
 import {Typography} from "@mui/material";
 
 const drawerWidth = 250
-const listLeftMarginHome = -0.5
 const listLeftMargin = 0
 const fontSize = undefined
 const listItemIcon = 30
@@ -50,7 +49,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
     }),
-    overflowX: 'hidden',
+    overflowX: 'hidden'
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
