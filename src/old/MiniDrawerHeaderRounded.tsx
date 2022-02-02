@@ -29,7 +29,7 @@ import {AdminIcon} from '../images/AdminIcon'
 import {CustomerSearchIcon} from "../images/CustomerSearchIcon";
 import {Typography} from "@mui/material";
 
-const drawerWidth = 240
+const drawerWidth = 250
 const listLeftMarginHome = -0.5
 const listLeftMargin = -0.5
 const fontSize = undefined
@@ -60,9 +60,9 @@ const closedMixin = (theme: Theme): CSSObject => ({
         duration: theme.transitions.duration.leavingScreen,
     }),
     overflowX: 'hidden',
-    width: `calc(${theme.spacing(4.8)} + 1px)`,
+    width: `calc(${theme.spacing(7)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
-        width: `calc(${theme.spacing(4.8)} + 1px)`,
+        width: `calc(${theme.spacing(7)} + 1px)`,
     },
 });
 
@@ -91,6 +91,13 @@ const MuiAppBar = styled(AppBar)(
     }),
 );
 
+const MuiListItemText = styled(ListItemText)(
+    ({theme}) => ({
+        marginLeft: theme.spacing(1.75),
+        color: "#0077CC"
+    })
+)
+
 export default function MiniDrawerHeaderRounded() {
     const classes = useStyles();
     const logoSam = logo;
@@ -117,14 +124,14 @@ export default function MiniDrawerHeaderRounded() {
                                 alt="logo"
                                 width="32px"
                                 height="32px"
-                                mr={1}
+                                mr={1.25}
                             />
                         </Link>
                     </Toolbar>
                 </MuiAppBar>
                 {/*todo: Move main into routes*/}
                 <Drawer variant="permanent" open={open} sx={{}}>
-                    <List sx={{paddingTop: 0, paddingBottom: 0}}>
+                    <List sx={{paddingTop: 0, paddingBottom: 0, paddingLeft: 0.5}}>
                         <ListItem>
                             <ListItemIcon className={classes.iconSize16}>
                                 <IconButton
@@ -137,7 +144,7 @@ export default function MiniDrawerHeaderRounded() {
                             </ListItemIcon>
                         </ListItem>
                     </List>
-                    <List sx={{paddingTop: 0}}>
+                    <List sx={{paddingTop: 0, paddingLeft: 0.5}}>
                         {['Home', 'Customer Finder'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMarginHome)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
@@ -146,13 +153,13 @@ export default function MiniDrawerHeaderRounded() {
                                     {text === "Customer Finder" ?
                                         <CustomerSearchIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
+                                <MuiListItemText primary={text}/>
                                 {/*{NavListItem(text)}*/}
                             </ListItem>
                         ))}
                     </List>
                     <Divider/>
-                    <List>
+                    <List sx={{paddingLeft: 0.5}}>
                         {['Token Management', 'Token Claims', 'Bonus Bet Management'].map((text, index) => (
                             <ListItem button key={text} sx={{}}>
                                 <ListItemIcon
@@ -165,12 +172,12 @@ export default function MiniDrawerHeaderRounded() {
                                     {text === "Bonus Bet Management" ?
                                         <BonusBetsIcon color="primary"/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
+                                <MuiListItemText primary={text}/>
                             </ListItem>
                         ))}
                     </List>
                     <Divider/>
-                    <List>
+                    <List sx={{paddingLeft: 0.5}}>
                         {['Token Payouts', 'Manual Resulting Config'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
@@ -179,19 +186,19 @@ export default function MiniDrawerHeaderRounded() {
                                     {text === "Manual Resulting Config" ?
                                         <Settings color="primary" sx={{fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
+                                <MuiListItemText primary={text}/>
                             </ListItem>
                         ))}
                     </List>
                     <Divider/>
-                    <List>
+                    <List sx={{paddingLeft: 0.5}}>
                         {['Bet With Mates'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
                                     {text === "Bet With Mates" ?
                                         <BetWitMatesIcon color="primary" sx={{fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
+                                <MuiListItemText primary={text}/>
                             </ListItem>
                         ))}
                     </List>
@@ -203,59 +210,81 @@ export default function MiniDrawerHeaderRounded() {
                                     {text === "Safer Gambling" ?
                                         <Info color="primary" sx={{fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "#0077CC"}}/>
+                                <MuiListItemText primary={text}/>
                             </ListItem>
                         ))}
                     </List>
                     <Divider sx={{position: "absolute", bottom: theme.spacing(13), width: "100%"}}/>
-                    <List sx={{position: "absolute", bottom: theme.spacing(5)}}>
+                    <List sx={{position: "absolute", bottom: theme.spacing(5.5), paddingLeft: 0.5}}>
                         {['Admin'].map((text, index) => (
-                            <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}
-                                      className={classes.iconSize16}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}}>
+                            <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
+                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
                                     {text === "Admin" ?
-                                        <AdminIcon className={classes.iconSize16}
-                                                   sx={{color: "gray", fontSize: fontSize}}/> : undefined}
+                                        <AdminIcon sx={{color: "gray", fontSize: fontSize}}/> : undefined}
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{color: "gray"}}/>
+                                <MuiListItemText primary={text} sx={{color: "gray"}}/>
                             </ListItem>
                         ))}
                     </List>
                 </Drawer>
-                <Box component="main" sx={{
+                <Box component="main" data-automation-id="main-content" sx={{
                     flexGrow: 1,
                     p: 3,
                     position: "absolute",
-                    marginTop: theme.spacing(4),
-                    marginLeft: theme.spacing(4)
+                    marginTop: theme.spacing(3),
+                    marginLeft: theme.spacing(1.75),
+                    paddingRight: theme.spacing(0)
                 }}>
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                        enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                        imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                        Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                        Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                        adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                        nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                        leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                        feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                        consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                        sapien faucibus et molestie ac.
-                    </Typography>
-                    <Typography paragraph>
-                        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                        eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                        neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                        tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                        sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                        tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                        gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                        et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                        tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                        eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                        posuere sollicitudin aliquam ultrices sagittis orci a.
-                    </Typography>
+                    <Box
+                        data-automation-id="page-header"
+                        sx={theme => ({
+                            gridGap: theme.spacing(2),
+                            backgroundColor: "background.paper"
+                        })}
+                        pl={2}
+                        pt={1.38}
+                        pb={1.38}
+                    >
+                        <Box pt={1}>
+                            <Typography
+                                data-automation-id="page-title"
+                                variant="h4"
+                                color="#000"
+                                fontWeight="300">
+                                Page Title
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Divider sx={{width: "100%"}}/>
+                    <Box data-autimation-id="page-content" pl={2} pt={1.5} pb={2} pr={2}>
+                        <Typography paragraph>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
+                            enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
+                            imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
+                            Convallis convallis tellus id interdum velit laoreet id donec ultrices.
+                            Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+                            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
+                            nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
+                            leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
+                            feugiat vivamus at augue. At augue eget arcu dictum varius duis at
+                            consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
+                            sapien faucibus et molestie ac.
+                        </Typography>
+                        <Typography paragraph>
+                            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
+                            eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
+                            neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
+                            tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
+                            sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
+                            tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
+                            gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
+                            et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
+                            tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
+                            eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
+                            posuere sollicitudin aliquam ultrices sagittis orci a.
+                        </Typography>
+                    </Box>
                 </Box>
             </Box>
         </>
