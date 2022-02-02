@@ -13,14 +13,14 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
-import logo from "./logo_sam.png"
+import logo from "../images/logo_sam.png"
 
 import {Home, Info, LocalAtm, MonetizationOn, SettingsApplicationsRounded as Settings} from "@mui/icons-material"
-import {CustomerSearchIcon} from './CustomerSearchIcon'
-import {TokenClaimsIcon} from './TokenClaimsIcon'
-import {BonusBetsIcon} from './BonusBetsIcon'
-import {BetWitMatesIcon} from './BetWithMatesIcon'
-import {AdminIcon} from './AdminIcon'
+import {CustomerSearchIcon} from '../images/CustomerSearchIcon'
+import {TokenClaimsIcon} from '../images/TokenClaimsIcon'
+import {BonusBetsIcon} from '../images/BonusBetsIcon'
+import {BetWitMatesIcon} from '../images/BetWithMatesIcon'
+import {AdminIcon} from '../images/AdminIcon'
 import {Link} from "react-router-dom";
 
 
@@ -74,7 +74,7 @@ const MuiAppBar = styled(AppBar)(
     }),
 );
 
-export default function MiniDrawerHeader() {
+export default function MiniDrawerHeaderOverlay() {
     const logoSam = logo;
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -190,7 +190,13 @@ export default function MiniDrawerHeader() {
                         ))}
                     </List>
                 </Drawer>
-                <Box component="main" sx={{flexGrow: 1, p: 3}}>
+                <Box component="main" sx={{
+                    flexGrow: 1,
+                    p: 3,
+                    position: "absolute",
+                    marginTop: theme.spacing(4),
+                    marginLeft: theme.spacing(4)
+                }}>
                     <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

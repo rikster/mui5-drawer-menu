@@ -17,10 +17,11 @@ export const App = () => {
     return (
         <div className="App">
             <header className="App-header">
-                <NavLink label={"MUI5 Menu Drawer | React Router V6 | Content Moves"} to={"/miniheader"}/>
-                <NavLink label={"MUI5 Menu Drawer | React Router V6 | Content Static"} to={"/miniheaderoverlay"}/>
                 <NavLink
-                    label={"MUI5 Menu Drawer | React Router V6 | Content Static | Rounded Smaller Icons (20x20 - Viewport) "}
+                    label={"MUI5 Menu Drawer " +
+                    "| React Router V6 " +
+                    "| Content Static " +
+                    "| Rounded Smaller Icons (20x20 - Viewport) "}
                     to={"/miniheaderoverlayrounded"}/>
             </header>
         </div>

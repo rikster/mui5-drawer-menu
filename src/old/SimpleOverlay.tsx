@@ -10,10 +10,10 @@ import ListItemText from '@mui/material/ListItemText';
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import {Home, LocalAtm, MonetizationOn, SettingsApplicationsRounded as Settings} from "@mui/icons-material";
-import {CustomerSearchIcon} from "./CustomerSearchIcon";
-import {TokenClaimsIcon} from "./TokenClaimsIcon";
-import {BonusBetsIcon} from "./BonusBetsIcon";
-import {BetWitMatesIcon} from "./BetWithMatesIcon";
+import {CustomerSearchIcon} from "../images/CustomerSearchIcon";
+import {TokenClaimsIcon} from "../images/TokenClaimsIcon";
+import {BonusBetsIcon} from "../images/BonusBetsIcon";
+import {BetWitMatesIcon} from "../images/BetWithMatesIcon";
 import {useTheme} from "@mui/material/styles";
 
 export default function TemporaryDrawer() {

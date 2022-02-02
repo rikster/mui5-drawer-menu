@@ -3,26 +3,32 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {App} from "./App";
 import './index.css';
-import OriginalDrawerHeader from './OriginalDrawerHeader';
-import MiniDrawerNoHeader from "./MiniDrawerNoHeader";
-import MiniDrawerHeader from "./MiniDrawerHeader";
-import MiniDrawerHeaderOverlay from './MiniDrawerHeaderOverlay';
-import SimpleOverlay from './SimpleOverlay';
+
+//experimental
+import OriginalDrawerHeader from './old/OriginalDrawerHeader';
+import MiniDrawerNoHeader from "./old/MiniDrawerNoHeader";
+import MiniDrawerHeader from "./old/MiniDrawerHeader";
+import MiniDrawerHeaderOverlay from './old/MiniDrawerHeaderOverlay';
+import SimpleOverlay from './old/SimpleOverlay';
+import MiniDrawerHeaderRounded from './old/MiniDrawerHeaderRounded';
+
+//content
 import Home from "./pages/Home";
-import MiniDrawerHeaderRounded from './MiniDrawerHeaderRounded';
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App/>}/>
                 <Route path="/header" element={<OriginalDrawerHeader/>}/>
                 <Route path="/noheader" element={<MiniDrawerNoHeader/>}/>
                 <Route path="/miniheader" element={<MiniDrawerHeader/>}/>
                 <Route path="/miniheaderoverlay" element={<MiniDrawerHeaderOverlay/>}/>
-                <Route path="/miniheaderoverlayrounded" element={<MiniDrawerHeaderRounded/>}/>
                 <Route path="/simpleoverlay" element={<SimpleOverlay/>}/>
-                <Route path="/home" element={<Home/>}/>
+                <Route path="/" element={<App/>}/>
+                {/*todo:refactor routing and and add auth*/}
+                <Route path="/miniheaderoverlayrounded" element={<MiniDrawerHeaderRounded/>}>
+                    <Route path="home" element={<Home/>}/>
+                </Route>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

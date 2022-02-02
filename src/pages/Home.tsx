@@ -1,9 +1,13 @@
 import React from 'react';
+import Box from "@mui/material/Box";
 
-export default function Home()
-{
+const Home = () => {
     return (
-        <h1>Home</h1>
+        <Box component="main" data-automation-id="main-content-sam">
+            <h1>Home</h1>
+        </Box>
     );
 }
+
+export default Home
 
