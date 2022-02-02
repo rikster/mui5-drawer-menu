@@ -87,13 +87,6 @@ const MuiAppBar = styled(AppBar)(
         position: "fixed",
         paddingLeft: theme.spacing(1.0),
         zIndex: theme.zIndex.drawer + 1,
-    }),
-);
-
-const MuiListItemText = styled(ListItemText)(
-    ({theme}) => ({
-        marginLeft: theme.spacing(1.75),
-        color: "#0077CC"
     })
 )
 
@@ -102,10 +95,19 @@ export default function MiniDrawerHeaderRounded() {
     const logoSam = logo;
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const [muiListItemTextVisible, setMuiListItemTextVisible]= React.useState(false);
 
     const toggleDrawer = () => {
-        setOpen(!open);
+        setOpen(!open)
+        setMuiListItemTextVisible(!muiListItemTextVisible)
     };
+
+    const MuiListItemText = styled(ListItemText)(
+        ({theme}) => ({
+            marginLeft: muiListItemTextVisible ? theme.spacing(0): theme.spacing(2),
+            color: "#0077CC"
+        })
+    )
 
     return (
         <>
