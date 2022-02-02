@@ -31,7 +31,7 @@ import {Typography} from "@mui/material";
 
 const drawerWidth = 250
 const listLeftMarginHome = -0.5
-const listLeftMargin = -0.5
+const listLeftMargin = 0
 const fontSize = undefined
 const listItemIcon = 30
 
@@ -124,7 +124,7 @@ export default function MiniDrawerHeaderRounded() {
                                 alt="logo"
                                 width="32px"
                                 height="32px"
-                                mr={1.25}
+                                ml={1}
                             />
                         </Link>
                     </Toolbar>
@@ -132,7 +132,7 @@ export default function MiniDrawerHeaderRounded() {
                 {/*todo: Move main into routes*/}
                 <Drawer variant="permanent" open={open} sx={{}}>
                     <List sx={{paddingTop: 0, paddingBottom: 0, paddingLeft: 0.5}}>
-                        <ListItem>
+                        <ListItem sx={{marginLeft: 0.5}}>
                             <ListItemIcon className={classes.iconSize16}>
                                 <IconButton
                                     aria-label="open drawer"
@@ -146,7 +146,7 @@ export default function MiniDrawerHeaderRounded() {
                     </List>
                     <List sx={{paddingTop: 0, paddingLeft: 0.5}}>
                         {['Home', 'Customer Finder'].map((text, index) => (
-                            <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMarginHome)}}>
+                            <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
                                     {text === "Home" ?
                                         <Home color="primary"/> : undefined}
@@ -215,7 +215,7 @@ export default function MiniDrawerHeaderRounded() {
                         ))}
                     </List>
                     <Divider sx={{position: "absolute", bottom: theme.spacing(13), width: "100%"}}/>
-                    <List sx={{position: "absolute", bottom: theme.spacing(5.5), paddingLeft: 0.5}}>
+                    <List sx={{position: "absolute", bottom: theme.spacing(5.5), paddingLeft: 0.5, width: "100%"}}>
                         {['Admin'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
@@ -232,7 +232,7 @@ export default function MiniDrawerHeaderRounded() {
                     p: 3,
                     position: "absolute",
                     marginTop: theme.spacing(3),
-                    marginLeft: theme.spacing(1.75),
+                    marginLeft: theme.spacing(4),
                     paddingRight: theme.spacing(0)
                 }}>
                     <Box
@@ -256,34 +256,38 @@ export default function MiniDrawerHeaderRounded() {
                         </Box>
                     </Box>
                     <Divider sx={{width: "100%"}}/>
-                    <Box data-autimation-id="page-content" pl={2} pt={1.5} pb={2} pr={2}>
-                        <Typography paragraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                            enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                            imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                            Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                            Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                            nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                            leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                            feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                            consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                            sapien faucibus et molestie ac.
-                        </Typography>
-                        <Typography paragraph>
-                            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                            eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                            neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                            tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                            sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                            tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                            gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                            et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                            tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                            eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                            posuere sollicitudin aliquam ultrices sagittis orci a.
-                        </Typography>
+                    <Box sx={{backgroundColor: "#fafafa"}}
+                         pl={2} pt={1.5} pr={2} pb={1.5} >
+                        <Box data-autimation-id="page-content" sx={{ backgroundColor: "#FFF", borderRadius: 1 }}
+                             pl={2} pt={1.5} pr={2} pb={1.5}>
+                            <Typography paragraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
+                                enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
+                                imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
+                                Convallis convallis tellus id interdum velit laoreet id donec ultrices.
+                                Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+                                adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
+                                nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
+                                leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
+                                feugiat vivamus at augue. At augue eget arcu dictum varius duis at
+                                consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
+                                sapien faucibus et molestie ac.
+                            </Typography>
+                            <Typography paragraph>
+                                Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
+                                eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
+                                neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
+                                tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
+                                sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
+                                tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
+                                gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
+                                et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
+                                tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
+                                eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
+                                posuere sollicitudin aliquam ultrices sagittis orci a.
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
             </Box>
