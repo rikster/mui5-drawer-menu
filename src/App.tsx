@@ -18,11 +18,22 @@ export const App = () => {
         <div className="App">
             <header className="App-header">
                 <NavLink
-                    label={"MUI5 Menu Drawer " +
-                    "| React Router V6 " +
-                    "| Content Static " +
-                    "| Rounded Smaller Icons (20x20 - Viewport) "}
-                    to={"/miniheaderoverlayrounded"}/>
+                    label={
+                        "MUI5 Menu Drawer " +
+                        "| React Router V6 " +
+                        "| Content Static " +
+                        "| Rounded Smaller Icons" +
+                        "| Title"}
+                    to={"/miniheaderoverlayroundedtitle"}/>
+                <NavLink
+                    label={
+                        "MUI5 Menu Drawer " +
+                        "| React Router V6 " +
+                        "| Content Static " +
+                        "| Rounded Smaller Icons" +
+                        "| Title" +
+                        "| Tabs"}
+                    to={"/miniheaderoverlayroundedtitletabs"}/>
             </header>
         </div>
     );

@@ -10,7 +10,8 @@ import MiniDrawerNoHeader from "./old/MiniDrawerNoHeader";
 import MiniDrawerHeader from "./old/MiniDrawerHeader";
 import MiniDrawerHeaderOverlay from './old/MiniDrawerHeaderOverlay';
 import SimpleOverlay from './old/SimpleOverlay';
-import MiniDrawerHeaderRounded from './old/MiniDrawerHeaderRounded';
+import MiniDrawerHeaderRoundedTitleContent from './old/MiniDrawerHeaderRoundedTitleContent';
+import MiniDrawerHeaderRoundedTitleContentTabs from './old/MiniDrawerHeaderRoundedTitleContentTabs';
 
 //content
 import Home from "./pages/Home";
@@ -25,13 +26,18 @@ ReactDOM.render(
                 <Route path="/miniheaderoverlay" element={<MiniDrawerHeaderOverlay/>}/>
                 <Route path="/simpleoverlay" element={<SimpleOverlay/>}/>
                 <Route path="/" element={<App/>}/>
+                <Route path="home" element={<Home/>}/>
+
                 {/*todo:refactor routing and and add auth*/}
-                <Route path="/miniheaderoverlayrounded" element={<MiniDrawerHeaderRounded/>}>
-                    <Route path="home" element={<Home/>}/>
+                <Route path="/miniheaderoverlayroundedtitle"
+                       element={<MiniDrawerHeaderRoundedTitleContent/>}>
                 </Route>
+                <Route path="/miniheaderoverlayroundedtitletabs"
+                       element={<MiniDrawerHeaderRoundedTitleContentTabs/>}/>
             </Routes>
         </BrowserRouter>
-    </React.StrictMode>,
+    </React.StrictMode>
+    ,
     document.getElementById('root')
 );
 

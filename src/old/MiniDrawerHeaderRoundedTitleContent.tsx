@@ -29,7 +29,7 @@ import {AdminIcon} from '../images/AdminIcon'
 import {CustomerSearchIcon} from "../images/CustomerSearchIcon";
 import {Typography} from "@mui/material";
 
-const drawerWidth = 250
+const drawerWidth = 240
 const listLeftMargin = 0
 const fontSize = undefined
 const listItemIcon = 30
@@ -90,7 +90,7 @@ const MuiAppBar = styled(AppBar)(
     })
 )
 
-export default function MiniDrawerHeaderRounded() {
+export default function MiniDrawerHeaderRoundedTitleContent() {
     const classes = useStyles();
     const logoSam = logo;
     const theme = useTheme();
@@ -125,14 +125,13 @@ export default function MiniDrawerHeaderRounded() {
                                 alt="logo"
                                 width="32px"
                                 height="32px"
-                                ml={1}
                             />
                         </Link>
                     </Toolbar>
                 </MuiAppBar>
                 {/*todo: Move main into routes*/}
                 <Drawer variant="permanent" open={open} sx={{}}>
-                    <List sx={{paddingTop: 0, paddingBottom: 0, paddingLeft: 0.5}}>
+                    <List>
                         <ListItem sx={{marginLeft: 0.5}}>
                             <ListItemIcon className={classes.iconSize16}>
                                 <IconButton
@@ -145,7 +144,7 @@ export default function MiniDrawerHeaderRounded() {
                             </ListItemIcon>
                         </ListItem>
                     </List>
-                    <List sx={{paddingTop: 0, paddingLeft: 0.5}}>
+                    <List>
                         {['Home', 'Customer Finder'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
@@ -160,7 +159,7 @@ export default function MiniDrawerHeaderRounded() {
                         ))}
                     </List>
                     <Divider/>
-                    <List sx={{paddingLeft: 0.5}}>
+                    <List>
                         {['Token Management', 'Token Claims', 'Bonus Bet Management'].map((text, index) => (
                             <ListItem button key={text} sx={{}}>
                                 <ListItemIcon
@@ -178,7 +177,7 @@ export default function MiniDrawerHeaderRounded() {
                         ))}
                     </List>
                     <Divider/>
-                    <List sx={{paddingLeft: 0.5}}>
+                    <List>
                         {['Token Payouts', 'Manual Resulting Config'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
@@ -192,7 +191,7 @@ export default function MiniDrawerHeaderRounded() {
                         ))}
                     </List>
                     <Divider/>
-                    <List sx={{paddingLeft: 0.5}}>
+                    <List>
                         {['Bet With Mates'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
@@ -216,7 +215,7 @@ export default function MiniDrawerHeaderRounded() {
                         ))}
                     </List>
                     <Divider sx={{position: "absolute", bottom: theme.spacing(13), width: "100%"}}/>
-                    <List sx={{position: "absolute", bottom: theme.spacing(5.5), paddingLeft: 0.5, width: "100%"}}>
+                    <List sx={{position: "absolute", bottom: theme.spacing(5.5), width: "100%"}}>
                         {['Admin'].map((text, index) => (
                             <ListItem button key={text} sx={{marginLeft: theme.spacing(listLeftMargin)}}>
                                 <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
