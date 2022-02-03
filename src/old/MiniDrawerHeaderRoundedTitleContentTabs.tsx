@@ -30,10 +30,10 @@ import {CustomerSearchIcon} from "../images/CustomerSearchIcon";
 import {Typography} from "@mui/material";
 
 const drawerWidth = 240
-const listItemIcon = 30
+const listItemIconWidth = 30
 
 const useStyles = makeStyles(() => ({
-    iconSize16: {
+    iconSize: {
         "& svg": {
             fontSize: 20
         }
@@ -129,7 +129,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                 <Drawer variant="permanent" open={open} sx={{}}>
                     <List>
                         <ListItem sx={{marginLeft: 0.5}}>
-                            <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                            <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                 <IconButton
                                     aria-label="open drawer"
                                     onClick={toggleDrawer}
@@ -143,7 +143,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                     <List>
                         {['Home', 'Customer Finder'].map((text, index) => (
                             <ListItem button key={text}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                                <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                     {text === "Home" ?
                                         <Home color="primary"/> : undefined}
                                     {text === "Customer Finder" ?
@@ -158,7 +158,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                     <List>
                         {['Token Management', 'Token Claims', 'Bonus Bet Management'].map((text, index) => (
                             <ListItem button key={text} sx={{}}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                                <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                     {text === "Token Management" ?
                                         <MonetizationOn color="primary"/> : undefined}
                                     {text === "Token Claims" ?
@@ -174,7 +174,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                     <List>
                         {['Token Payouts', 'Manual Resulting Config'].map((text, index) => (
                             <ListItem button key={text}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                                <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                     {text === "Token Payouts" ?
                                         <LocalAtm color="primary" /> : undefined}
                                     {text === "Manual Resulting Config" ?
@@ -188,7 +188,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                     <List>
                         {['Bet With Mates'].map((text, index) => (
                             <ListItem button key={text}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                                <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                     {text === "Bet With Mates" ?
                                         <BetWitMatesIcon color="primary" /> : undefined}
                                 </ListItemIcon>
@@ -200,7 +200,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                     <List>
                         {['Safer Gambling'].map((text, index) => (
                             <ListItem button key={text}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                                <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                     {text === "Safer Gambling" ?
                                         <Info color="primary" /> : undefined}
                                 </ListItemIcon>
@@ -212,7 +212,7 @@ export default function MiniDrawerHeaderRoundedTitleContent() {
                     <List sx={{position: "absolute", bottom: theme.spacing(5.5), width: "100%"}}>
                         {['Admin'].map((text, index) => (
                             <ListItem button key={text}>
-                                <ListItemIcon sx={{minWidth: listItemIcon}} className={classes.iconSize16}>
+                                <ListItemIcon sx={{minWidth: listItemIconWidth}} className={classes.iconSize}>
                                     {text === "Admin" ?
                                         <AdminIcon sx={{color: "gray"}}/> : undefined}
                                 </ListItemIcon>
